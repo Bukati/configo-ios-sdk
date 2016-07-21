@@ -15,6 +15,7 @@
 #import "NNReachabilityManager.h"
 #import "NSDictionary+NNAdditions.h"
 #import "NSDate+NNAdditions.h"
+#import "NSLocale+NNAdditions.h"
 
 #import <CoreTelephony/CTTelephonyNetworkInfo.h>
 #import <CoreTelephony/CTCarrier.h>
@@ -75,13 +76,6 @@ static NSString *const kPOSTKey_deviceDetails_timezone          = @"timezoneOffs
     return self;
 }
 
-- (instancetype)initWithConfigoData:(CFGConfigoData *)configoData {
-    if(self = [super init]) {
-        _configoData = [configoData copy];
-    }
-    return self;
-}
-
 - (void)basicLoad {
     _configoData = [[CFGConfigoData alloc] init];
     _configoData.udid = [UIDevice udidFromKeychain: nil];
@@ -120,7 +114,7 @@ static NSString *const kPOSTKey_deviceDetails_timezone          = @"timezoneOffs
     //Always add data to request
     //Add UDID and CustomUserId to all requests (Identifiers)
     [dict nnSafeSetObject: _configoData.customUserId forKey: kPOSTKey_customUserId];
-    dict[kPOSTKey_Udid] = udid;
+    [dict nnSafeSetObject: udid forKey: kPOSTKey_Udid];
     [dict nnSafeSetObject: _configoData.userContext forKey: kPOSTKey_userContext];
     [dict nnSafeSetObject: _currentDeviceDetails forKey: kPOSTKey_deviceDetails];
     return dict;
@@ -241,18 +235,7 @@ static NSString *const kPOSTKey_deviceDetails_timezone          = @"timezoneOffs
     CTCarrier *carrier = telephonyInfo.subscriberCellularProvider;
     NSString *carrierName = [carrier carrierName] ? : @"NA"; //Not always available, e.g. iPad
     
-    NSString *language = @"en";
-    NSArray *preferredLanguages = [NSLocale preferredLanguages];
-    if(preferredLanguages.count > 0) {
-        NSString *firstLang = preferredLanguages[0];
-        if([firstLang rangeOfCharacterFromSet: [NSCharacterSet characterSetWithCharactersInString: @"-_"]].location != NSNotFound) {
-            NSDictionary *localeDict = [NSLocale componentsFromLocaleIdentifier: firstLang];
-            NSString *langValue = [localeDict objectForKey: NSLocaleLanguageCode];
-            if(langValue) {
-                language = langValue;
-            }
-        }
-    }
+    NSString *language = [NSLocale preferredLanguageId];
     
     CGRect screenBounds = [[UIScreen mainScreen] bounds];
     NSInteger screenHeight = MAX(screenBounds.size.height, screenBounds.size.width);

@@ -2,10 +2,10 @@
 All changes to the SDK will be documented in this file.
 This project follows the [Semantic Versioning](http://semver.org) style.
 
-## [Unreleased]
+## [0.5.1] - 2016-07-26
 ### Added
 - `CFGNetworkController` tests for network reachability before making any request.
-
+- Language code (2 letter) corrected for all iOS versions.
 
 ## [0.5.0] - 2016-06-27
 ### Deprecated
