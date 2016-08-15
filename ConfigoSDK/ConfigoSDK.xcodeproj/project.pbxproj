@@ -176,7 +176,7 @@
 		5C6498681C99BF6C00510071 /* CFGBaseTestCase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CFGBaseTestCase.h; sourceTree = "<group>"; };
 		5C6498691C9AE05400510071 /* OHHTTPStubsUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHHTTPStubsUtilities.h; sourceTree = "<group>"; };
 		5C64986A1C9AE05400510071 /* OHHTTPStubsUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OHHTTPStubsUtilities.m; sourceTree = "<group>"; };
-		5C7BAB2B1C3C2A3B00889570 /* ConfigoSDK.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = ConfigoSDK.podspec; path = /Users/natanavra/Projects/Development/Configo/iOS/ConfigoSDK.podspec; sourceTree = "<absolute>"; };
+		5C7BAB2B1C3C2A3B00889570 /* ConfigoSDK.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = ConfigoSDK.podspec; path = ../ConfigoSDK.podspec; sourceTree = SOURCE_ROOT; };
 		5C7C77271C96BBB300DE033B /* CFGLoggerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFGLoggerTests.m; sourceTree = "<group>"; };
 		5C7C77291C96BCC100DE033B /* CFGNetworkControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFGNetworkControllerTests.m; sourceTree = "<group>"; };
 		5C7C772B1C96BDAF00DE033B /* v1-event-push-success.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "v1-event-push-success.json"; path = "../../../response-files/v1-event-push-success.json"; sourceTree = "<group>"; };

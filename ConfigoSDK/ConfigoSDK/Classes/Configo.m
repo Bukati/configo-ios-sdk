@@ -314,8 +314,11 @@ static id _shared = nil;
 - (NSDictionary *)featuresDictionary {
     NSMutableDictionary *retval = [NSMutableDictionary dictionary];
     NSArray *featuresArray = _activeConfigoResponse.configObj.featuresArray;
-    for(CFGFeature *feature in featuresArray) {
-        [retval nnSafeSetObject: @(feature.enabled) forKey: feature.key];
+    for(id obj in featuresArray) {
+        if([obj isKindOfClass: [CFGFeature class]]) {
+            CFGFeature *feature = (CFGFeature *)obj;
+            [retval nnSafeSetObject: @(feature.enabled) forKey: feature.key];
+        }
     }
     return [retval copy];
 }

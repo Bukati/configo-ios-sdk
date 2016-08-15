@@ -2,6 +2,10 @@
 All changes to the SDK will be documented in this file.
 This project follows the [Semantic Versioning](http://semver.org) style.
 
+## [0.5.2] - 2016-08-15
+### Fixed
+- Exception on `featuresDictionary` caused by NSInvalidArgumentException because of a corrupted response.
+
 ## [0.5.1] - 2016-07-26
 ### Added
 - `CFGNetworkController` tests for network reachability before making any request.

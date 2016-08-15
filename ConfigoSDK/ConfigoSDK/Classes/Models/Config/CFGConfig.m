@@ -40,9 +40,6 @@ static NSString *const kFeaturesKey = @"features";
             if(feature) {
                 [retArr addObject: feature];
             }
-        } else {
-            retArr = [NSMutableArray arrayWithArray: features];
-            break;
         }
     }
     return retArr.count == 0 ? nil : retArr;

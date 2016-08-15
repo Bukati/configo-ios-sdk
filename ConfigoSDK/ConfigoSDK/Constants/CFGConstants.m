@@ -13,7 +13,7 @@
 
 #pragma mark - Global Constants
 
-NSString *const ConfigoSDKVersion = @"0.5.1";
+NSString *const ConfigoSDKVersion = @"0.5.2";
 NSString *const CFGFileNamePrefix = @"configo";
 NSString *const CFGErrorDomain = @"io.configo.error";
 NSString *const CFGSessionStartEventName = @"CONFIGO_SESSION_START";
